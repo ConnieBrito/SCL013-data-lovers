@@ -116,7 +116,7 @@ input.form-control {
 /*Gif inicial*/
 
 #gifPoke {
-    position: center;
+    display: flex;
     align-items: center;
     width: 500px;
     height: 352px;
@@ -150,7 +150,7 @@ button.boton {
     min-height: 50px;
     justify-content: space-between;
     margin-left: 270px;
-    position: relative;
+    cursor: pointer;
 }
 
 #buttonInfo {
@@ -160,15 +160,15 @@ button.boton {
     width: 350px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .container {
-    position: relative;
+    display: flex;
 }
 
 .respuestas {
-    position: relative;
-    display: none;
+    display: flex;
 }
 
 
@@ -195,6 +195,14 @@ img.marcob {
 flex-content .container {
     display: flex;
     flex-direction: column;
+    float: left;
+}
+
+.container {
+    flex-direction: column;
+    justify-content: left;
+    float: left;
+    width: 30%;
 }
 
 img.novato {
@@ -206,12 +214,13 @@ img.novato {
 }
 
 .respuestas {
-    position: absolute;
-    width: 925px;
-    height: 720px;
-    left: 435px;
-    top: 160px;
+    width: 70%;
+    text-align: left;
     background: rgba(251, 210, 99, 0.5);
+}
+
+.pokePag {
+    display: flex;
 }
 
 
@@ -220,7 +229,13 @@ img.novato {
 p.definition {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
-    margin-left: 60px;
+    text-align: left;
+    margin-left: 20px;
+    width: 50%;
+}
+
+infoPokemon p.definition {
+    width: 60px;
 }
 
 .pikaimg {
@@ -511,10 +526,6 @@ label {
 
 #origin {
     display: auto;
-}
-
-.pokePag {
-    display: none;
 }
 
 #modalContent {

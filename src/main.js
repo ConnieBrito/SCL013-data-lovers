@@ -281,18 +281,6 @@ function typeMenu() {
     let lookType = document.getElementById("typePokemon");
     lookType.style.display = "block";
 }
-//Parte de los botones 
-//Muestra sección Novato
-
-/*document.getElementById("buttonNovato").addEventListener("click", buttonNovato);
-
-function buttonNovato() {
-    let originActual = document.getElementById("origin");
-    originActual.style.display = "none";
-    let lookNovato = document.getElementById("novato");
-    lookNovato.style.display = "block";
-}*/
-
 
 //Muestra sección Entrenador
 document.getElementById("buttonEntrenador").addEventListener("click", buttonEntrenador);
