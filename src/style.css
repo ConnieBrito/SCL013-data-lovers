@@ -75,6 +75,14 @@ li.dropdown {
     display: none;
 }
 
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 80px;
+}
+
 header label {
     display: none;
     width: 30px;
@@ -85,6 +93,10 @@ header label {
 header label:hover {
     cursor: pointer;
     background: rgba(0, 0, 0, 0.3);
+}
+
+.flex-container {
+    margin: 80px auto 0px;
 }
 
 
@@ -117,12 +129,16 @@ input.form-control {
 
 #gifPoke {
     display: flex;
-    align-items: center;
     width: 500px;
     height: 352px;
     left: 470px;
     top: 356px;
     background: url('images/pokemon-iniciales.gif');
+}
+
+.gif {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -145,12 +161,20 @@ button.boton {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
-    display: inline-block;
     min-width: 250px;
     min-height: 50px;
-    justify-content: space-between;
-    margin-left: 270px;
+    text-decoration: none;
     cursor: pointer;
+}
+
+.buttonMenu {
+    display: inline-flex;
+}
+
+.buttonChoice {
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
 }
 
 #buttonInfo {
@@ -161,6 +185,29 @@ button.boton {
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     margin-top: 20px;
     cursor: pointer;
+    text-decoration: none;
+}
+
+#buttonInfo1 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#buttonInfo2 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 350px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .container {
@@ -169,6 +216,7 @@ button.boton {
 
 .respuestas {
     display: flex;
+    flex-direction: column;
 }
 
 
@@ -192,35 +240,45 @@ img.marcob {
 
 /*Section Novato*/
 
-flex-content .container {
-    display: flex;
-    flex-direction: column;
-    float: left;
-}
-
 .container {
     flex-direction: column;
-    justify-content: left;
     float: left;
-    width: 30%;
+    width: 28%;
 }
 
 img.novato {
     width: 700px;
     height: 500px;
     display: flex;
-    margin-left: 300px;
-    align-content: center;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .respuestas {
-    width: 70%;
+    width: 68%;
     text-align: left;
     background: rgba(251, 210, 99, 0.5);
 }
 
 .pokePag {
     display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    display: none;
+}
+
+.pokeInfo {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.pokeinfo .container {
+    float: left;
+}
+
+div .novato1 {
+    margin-top: 80px;
 }
 
 
@@ -231,7 +289,7 @@ p.definition {
     font-size: 24px;
     text-align: left;
     margin-left: 20px;
-    width: 50%;
+    width: 100%;
 }
 
 infoPokemon p.definition {
@@ -241,22 +299,45 @@ infoPokemon p.definition {
 .pikaimg {
     width: 260px;
     height: 270px;
-    margin-left: 900px;
-    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pikachuimg {
+    text-align: right;
+    margin-right: 40px;
 }
 
 .pokeimg {
     width: 210px;
     height: 290px;
-    margin-left: 900px;
-    justify-content: center;
+}
+
+.pokedexinfoimg {
+    text-align: right;
+    margin-right: 40px;
+    margin-bottom: 10px;
 }
 
 .typeimg {
     width: 100px;
     height: 100px;
-    margin-left: 150px;
-    justify-content: stretch;
+    margin-right: 60px;
+}
+
+.tiposimg {
+    display: inline-flexbox;
+    flex-direction: row;
+    text-align: right;
+    margin-right: 60px;
+}
+
+.tiposimg2 {
+    display: inline-flexbox;
+    flex-direction: row;
+    text-align: right;
+    margin-right: 140px;
+    margin-bottom: 10px;
 }
 
 
@@ -278,6 +359,7 @@ figcaption {
     bottom: -100px;
     width: 90%;
     padding: 5%;
+    text-align: center;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
 }
@@ -287,8 +369,20 @@ figure:hover figcaption {
 }
 
 .flex-position a {
-    align-items: center;
-    margin-left: 250px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.buttonimg {
+    display: flex;
+}
+
+.botonesMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 100px;
 }
 
 .pokedeximg {
@@ -299,6 +393,7 @@ figure:hover figcaption {
 .pokeballimg {
     width: 300px;
     height: 300px;
+    margin-top: 40px;
 }
 
 .lookCard {
@@ -323,6 +418,11 @@ figure:hover figcaption {
     margin: 20px;
 }
 
+.typeButtons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .tipychoose {
     width: 100px;
     height: 100px;
@@ -332,6 +432,10 @@ figure:hover figcaption {
     text-align: center;
     cursor: pointer;
     margin-bottom: auto;
+}
+
+#rootType {
+    margin-top: 80px;
 }
 
 
@@ -421,26 +525,30 @@ li.dropfilter {
 
 /*Filtros Pokédex*/
 
-.heather {
+.filter-container {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    background: rgba(251, 210, 99, 0.945);
+    height: 60px;
+    border-radius: 10px;
 }
 
 label {
     font-family: 'Roboto', sans-serif;
     flex-direction: row;
     padding: 5px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .navegationMenu {
     font-family: 'Roboto', sans-serif;
     flex-direction: row;
-    vertical-align: center;
     padding: 5px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     width: 170px;
+    margin-top: 12px;
 }
 
 
@@ -511,6 +619,7 @@ label {
 .characterInformation {
     padding: 0px 0px 0px 30px;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
     color: #000;
 }
 
@@ -518,6 +627,7 @@ label {
     padding: 5px 30px 30px 70px;
     font-size: 20px;
     line-height: 22px;
+    font-family: 'Roboto', sans-serif;
     color: #000;
 }
 
@@ -534,7 +644,9 @@ label {
 
 .note {
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
 }
 
 
@@ -543,6 +655,7 @@ label {
 .footer {
     font-family: 'Roboto', sans-serif;
     border-radius: 3px;
+    font-size: 12px;
     display: block;
     justify-content: center;
     margin: 0;

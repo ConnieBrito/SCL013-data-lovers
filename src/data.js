@@ -13,11 +13,11 @@ export const orderDataAz = (dataInfo) => {
     for (let i = 0; i < dataInfo.length; i++) {
         newPokeArray.push(dataInfo[i]);
     }
-    newPokeArray.sort((a, b) => {
-        if (a.name > b.name) {
+    newPokeArray.sort((pokemonA, pokemonB) => {
+        if (pokemonA.name > pokemonB.name) {
             return 1;
         }
-        if (a.name < b.name) {
+        if (pokemonA.name < pokemonB.name) {
             return -1;
         }
         return 0;
@@ -31,11 +31,11 @@ export const orderDataZa = (dataInfo) => {
     for (let i = 0; i < dataInfo.length; i += 1) {
         newPokeArray.push(dataInfo[i]);
     }
-    newPokeArray.sort((a, b) => {
-        if (a.name > b.name) {
+    newPokeArray.sort((pokemonA, pokemonB) => {
+        if (pokemonA.name > pokemonB.name) {
             return -1;
         }
-        if (a.name < b.name) {
+        if (pokemonA.name < pokemonB.name) {
             return 1;
         }
         return 0;

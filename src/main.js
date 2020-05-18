@@ -13,7 +13,6 @@ formulario.addEventListener('keydown', function() {
         lookPokedex(pickPokemon);
     }
 });
-//lookPokedex(dataPokedex);
 
 const card = document.getElementById("lookPoke");
 
@@ -41,16 +40,14 @@ function lookPokedex(dataInfo) {
        </div>`;
     }
     card.innerHTML = cardDesign;
+    lookModal(dataInfo);
 }
 lookPokedex(dataPokedex);
 
-//lookPokedex(dataPokedex);
-
-
 //Para ordenar alfabéticamente (a-z / z-a)
 const menuPokedex = document.querySelector("#orderMenu");
-menuPokedex.addEventListener("change", () => {
-    let resultOrder = menuPokedex.value;
+menuPokedex.addEventListener("change", (e) => {
+    const resultOrder = `${e.target.value}`;
     if (resultOrder === "az") {
         lookPokedex(orderPokeAz);
     }
@@ -205,7 +202,24 @@ pokeTypeFlying.addEventListener('click', () => {
 });
 
 //Modal ultra genial
-function lookModal(m) {
+//Imagenes de los tipos de debilidades
+const weaknesses = (dataInfo) => {
+    let imgEachPokemon = '';
+    dataInfo.forEach((weaknessesPokemon) => {
+        imgEachPokemon += `<img src="./images/Type/${weaknessesPokemon}.png" alt="weaknesses"/>`;
+    });
+    return imgEachPokemon;
+};
+//Imagenes de los caramelos
+/* const candy = (dataInfo) => {
+   let imgEachCandyPokemon = '';
+   dataInfo.forEach((candyPokemon) => {
+       imgEachCandyPokemon += `<img src="./images/Candy/${candyPokemon}.png" alt="candy"/>`;
+   });
+   return imgEachCandyPokemon;
+ };*/
+
+function lookModal(dataInfo) {
     let modal = document.getElementById("myModal"); //Modal general html
     let modalContainer = document.getElementById("modalContent"); //Modal cuadrito blanco html
     let imgBtn = document.getElementsByClassName("elemCard"); //imagen que actua como boton. Ingresada en el js
@@ -225,24 +239,24 @@ function lookModal(m) {
                 </div>
                 <div  class="modalCharacters">
                 <div class="cardElem2">
-                   <h3>${m[i].num}</h3>
-                   <img src="${m[i].img}"/> 
-                    <h2>${m[i].name}</h2>
+                   <h3> # ${dataInfo[i].num}</h3>
+                   <img src="${dataInfo[i].img}"/> 
+                    <h2>${dataInfo[i].name}</h2>
                </div>
                     <div class="characterInformation">
-                    <p>Peso: ${m[i].weight}</p>
-                    <p>Altura: ${m[i].height}</p>
-                    <p>Huevo: ${m[i].egg}</p>
+                    <p>Peso: ${dataInfo[i].weight}</p>
+                    <p>Altura: ${dataInfo[i].height}</p>
+                    <p>Huevo: ${dataInfo[i].egg}</p>
                     </div>
                     <div class="characterInformation2">
-                        <h1>Tipo: ${m[i].type[0]}</h1>
+                        <h2>Tipo: ${dataInfo[i].type[0]}</h2>
                         
-                        <p>Debilidad: ${m[i].weaknesses}</p>
-                        <h1>Evolución / Caramelos:</h1>
-                        <p> Pre Evolución: ${m[i].prev_evolution ? m[i].prev_evolution[0].num : ''}  ${m[i].prev_evolution ? m[i].prev_evolution[0].name : 'No tiene'}</p> 
-                        <p>Caramelo: ${m[i].candy}</p>
-                        <p>Caramelo: ${m[i].candy_count}</p>
-                        <p> Evolución: ${m[i].next_evolution ? m[i].next_evolution[0].num : ''}  ${m[i].next_evolution ? m[i].next_evolution[0].name : 'No tiene'}</p> 
+                        <p>Débil contra: ${weaknesses(dataInfo[i].weaknesses)}</p>
+                        <h2>Evolución / Caramelos:</h2>
+                        <p> Pre Evolución: ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].num : ''}  ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].name : 'No tiene'}</p> 
+                        <p>Caramelo: ${dataInfo[i].candy}</p>
+                        <p>Caramelo: ${dataInfo[i].candy_count}</p>
+                        <p> Evolución: ${dataInfo[i].next_evolution ? dataInfo[i].next_evolution[0].num : ''}  ${dataInfo[i].next_evolution ? dataInfo[i].next_evolution[0].name : 'No tiene'}</p> 
                     </div>
                 </div>
             </div>`;
@@ -262,7 +276,18 @@ function lookModal(m) {
         }
     }
 }
-lookModal(dataPokedex);
+//lookModal(dataPokedex);
+
+//boton logo
+document.getElementById("LogoP").addEventListener("click", () => {
+    document.getElementById("origin").style.display = "block";
+    document.getElementById("novato").style.display = "none";
+    document.getElementById("entrenador").style.display = "none";
+    document.getElementById("pokedexKanto").style.display = "none";
+    document.getElementById("pokedexKanto").style.display = "none";
+    document.getElementById("typePokemon").style.display = "none";
+    document.getElementById("rootType").style.display = "none";
+});
 
 //Boton del menu (Entrenador)
 document.getElementById("allPokemonMenu").addEventListener("click", allPokemonMenu);
