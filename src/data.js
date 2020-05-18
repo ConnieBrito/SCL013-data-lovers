@@ -46,7 +46,7 @@ export const orderDataZa = (dataInfo) => {
 //Ordena pokémon por número #151 - #001
 export const orderDataNumDes = (dataInfo) => {
     const newPokeArray = [];
-    for (let i = 0; i < dataInfo.length; i += 1) {
+    for (let i = 0; i < dataInfo.length; i++) {
         newPokeArray.push(dataInfo[i]);
         newPokeArray.sort((a, b) => parseInt(b.num - a.num));
         return newPokeArray;

@@ -18,9 +18,9 @@ const card = document.getElementById("lookPoke");
 
 //Arreglo para llamar a la data de pokémon
 const dataPokedex = allPoke(pokeData.pokemon);
-const orderPokeAz = orderDataAz(allPoke);
-const orderPokeZa = orderDataZa(allPoke);
-const orderPokeNumDes = orderDataNumDes(allPoke);
+const orderPokeAz = orderDataAz(dataPokedex);
+const orderPokeZa = orderDataZa(dataPokedex);
+const orderPokeNumDes = orderDataNumDes(dataPokedex);
 
 
 //Muestra tarjetas de pokémon en pantalla
@@ -46,19 +46,16 @@ lookPokedex(dataPokedex);
 
 //Para ordenar alfabéticamente (a-z / z-a)
 const menuPokedex = document.querySelector("#orderMenu");
-menuPokedex.addEventListener("change", (e) => {
-    const resultOrder = `${e.target.value}`;
+menuPokedex.addEventListener("change", (dataInfo) => {
+    const resultOrder = `${dataInfo.target.value}`;
     if (resultOrder === "az") {
         lookPokedex(orderPokeAz);
     }
     if (resultOrder === "za") {
         lookPokedex(orderPokeZa);
     }
-    if (resultOrder === "9-0") {
+    if (resultOrder === "151-0") {
         lookPokedex(orderPokeNumDes);
-    }
-    if (resultOrder == "0-9") {
-        lookPokedex(dataPokedex);
     } else if (resultOrder === "All") {
         lookPokedex(dataPokedex);
     }
@@ -206,18 +203,18 @@ pokeTypeFlying.addEventListener('click', () => {
 const weaknesses = (dataInfo) => {
     let imgEachPokemon = '';
     dataInfo.forEach((weaknessesPokemon) => {
-        imgEachPokemon += `<img src="./images/Type/${weaknessesPokemon}.png" alt="weaknesses"/>`;
+        imgEachPokemon += `<img src="./images/Type/${weaknessesPokemon}.png" class="weakType" alt="weaknesses"/>`;
     });
     return imgEachPokemon;
 };
 //Imagenes de los caramelos
-/* const candy = (dataInfo) => {
-   let imgEachCandyPokemon = '';
-   dataInfo.forEach((candyPokemon) => {
-       imgEachCandyPokemon += `<img src="./images/Candy/${candyPokemon}.png" alt="candy"/>`;
-   });
-   return imgEachCandyPokemon;
- };*/
+/*const candy = (dataInfo) => {
+    let imgEachCandyPokemon = '';
+    dataInfo.forEach((candyPokemon) => {
+        imgEachCandyPokemon += `<img src="./images/candy/Candy/${candyPokemon}.png" alt="candy"/>`;
+    });
+    return imgEachCandyPokemon;
+};*/
 
 function lookModal(dataInfo) {
     let modal = document.getElementById("myModal"); //Modal general html
@@ -252,6 +249,7 @@ function lookModal(dataInfo) {
                         <h2>Tipo: ${dataInfo[i].type[0]}</h2>
                         
                         <p>Débil contra: ${weaknesses(dataInfo[i].weaknesses)}</p>
+                        
                         <h2>Evolución / Caramelos:</h2>
                         <p> Pre Evolución: ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].num : ''}  ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].name : 'No tiene'}</p> 
                         <p>Caramelo: ${dataInfo[i].candy}</p>
