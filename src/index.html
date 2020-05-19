@@ -17,10 +17,9 @@
         <header>
 
             <input type="checkbox" id="btnMenuResponsive">
-            <label for="btnMenuResponsive"><img src="./images/PokebolaMarco.png" alt=""></label>
+            <label for="btnMenuResponsive"><img class="pokeballResponsive" src="./images/PokebolaMarco.png" alt=""></label>
             <ul>
                 <li><img id="LogoP" src="./images/Pokelovers.png"></li>
-                <li><a href="#origin" id="inicio">Inicio</a></li>
                 <li class="dropdown">
                     <a href="#secNovato" class="dropbtn">Novato</a>
                     <!--Menu novato-->
@@ -44,8 +43,8 @@
             </ul>
         </header>
         <div class="flex-container">
-            <img src="./images/PokebolaMarco.png" class="marco">
-            <img src="./images/PokebolaMarco.png" class="marcob">
+            <img src="./images/PokebolaMarco.png" id="pokeball1" class="marco">
+            <img src="./images/PokebolaMarco.png" id="pokeball2" class="marcob">
 
             <section id="origin">
                 <h1 class="text">¡¡Bienvenido a la guía de PokéLovers!!</h1>
@@ -60,22 +59,18 @@
                         <a href="#entrenador"><button id="buttonEntrenador" class="boton">Entrenador Pokémon</button></a>
                     </div>
                 </div>
-                <br>
+
                 <div>
                     <p class="note">Nota: La información contenida dentro de esta web está basada en la Primera Generación de Pokémon de la Región de Kanto.</p>
                 </div>
             </section>
-            <img src="./images/PokebolaMarco.png" class="marco">
-            <img src="./images/PokebolaMarco.png" class="marcob">
+            <img src="./images/PokebolaMarco.png" id="pokeball3" class="marco">
+            <img src="./images/PokebolaMarco.png" id="pokeball4" class="marcob">
 
             <div class="novato1" id="secNovato">
-                <br><br><br><br><br>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
-                <br>
-                <section class="pokeInfo">
+                <section id="novatoInfo" class="pokeInfo">
                     <div class="container">
-                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</buttonnclick=></a>
+                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</button></a>
                         <a href="#queEsUnPokedex"><button id="buttonInfo1" class="boton">¿Qué es Pokédex?</button></a>
                         <a href="#queEsUnTipoDePokemon"><button id="buttonInfo2" class="boton">¿Qué es un Tipo de Pokémon?</button></a>
                     </div>
@@ -83,20 +78,13 @@
                     <div class="respuestas">
                         <img src="./images/pogo-8bit.jpg" class="novato">
                     </div>
-                    <br><br><br><br>
                 </section>
-                <br><br>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
             </div>
-            <br><br>
+
             <div class="novato2" id="queEsUnPokemon">
-                <br><br><br><br>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
-                <section class="pokeInfo">
+                <section id="UnPokemonEs" class="pokeInfo">
                     <div class="container">
-                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</buttonnclick=></a>
+                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</button></a>
                         <a href="#queEsUnPokedex"><button id="buttonInfo1" class="boton">¿Qué es Pokédex?</button></a>
                         <a href="#queEsUnTipoDePokemon"><button id="buttonInfo2" class="boton">¿Qué es un Tipo de Pokémon?</button></a>
                     </div>
@@ -108,17 +96,12 @@
                         </div>
                     </div>
                 </section>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
             </div>
-            <br><br>
+
             <div class="novato3" id="queEsUnPokedex">
-                <br><br><br><br>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
-                <section class="pokeInfo">
+                <section id="UnaPokedexEs" class="pokeInfo">
                     <div class="container">
-                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</buttonnclick=></a>
+                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</button></a>
                         <a href="#queEsUnPokedex"><button id="buttonInfo1" class="boton">¿Qué es Pokédex?</button></a>
                         <a href="#queEsUnTipoDePokemon"><button id="buttonInfo2" class="boton">¿Qué es un Tipo de Pokémon?</button></a>
                     </div>
@@ -131,17 +114,12 @@
                         </div>
                     </div>
                 </section>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
             </div>
-            <br><br><br>
+
             <div class="novato4" id="queEsUnTipoDePokemon">
-                <br><br><br><br>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
-                <section class="pokeInfo">
+                <section id="UnTipoDePokemonEs" class="pokeInfo">
                     <div class="container">
-                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</buttonnclick=></a>
+                        <a href="#queEsUnPokemon"><button id="buttonInfo" class="boton">¿Qué es un Pokémon?</button></a>
                         <a href="#queEsUnPokedex"><button id="buttonInfo1" class="boton">¿Qué es Pokédex?</button></a>
                         <a href="#queEsUnTipoDePokemon"><button id="buttonInfo2" class="boton">¿Qué es un Tipo de Pokémon?</button></a>
                     </div>
@@ -159,12 +137,9 @@
                         </div>
                     </div>
                 </section>
-                <br><br>
-                <img src="./images/PokebolaMarco.png" class="marco">
-                <img src="./images/PokebolaMarco.png" class="marcob">
             </div>
         </div>
-        </section>
+
 
         <section id="entrenador" class="pokePag">
             <div class="flex-position">
@@ -191,7 +166,7 @@
             </div>
         </section>
 
-        <br><br><br><br><br>
+
         <section id="pokedexKanto" class="pokePag">
             <h2>Pokédex Región Kanto</h2>
             <div class="filter-container">
@@ -371,12 +346,12 @@
                 </a>
             </div>
         </div>
+
     </section>
-    <br><br><br><br><br><br><br>
+
     <section id="rootType" class="pokePag">
         <div class="lookPoke" id="lookPokeType">
         </div>
-
     </section>
 
 

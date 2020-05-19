@@ -22,19 +22,26 @@ const orderPokeAz = orderDataAz(dataPokedex);
 const orderPokeZa = orderDataZa(dataPokedex);
 const orderPokeNumDes = orderDataNumDes(dataPokedex);
 
-
+//Para mostrar imagen del tipo en la tarjeta
+const typeImgCard = (dataInfo) => {
+    let imgEachPokeType = '';
+    dataInfo.forEach((typesPokemon) => {
+        imgEachPokeType += `<img src="./images/Type/${typesPokemon}.png" class="pokeCardType" alt="types"/>`;
+    });
+    return imgEachPokeType;
+};
 //Muestra tarjetas de pokémon en pantalla
 function lookPokedex(dataInfo) {
     let cardDesign = "";
     for (let i = 0; i < dataInfo.length; i++) {
         cardDesign += `
         <div class="elemCard">
-        <div id='pokemon${dataInfo[i].id}' class="card${dataInfo[i].type[0]}">
+        <div id='pokemon${dataInfo[i].id}' class="card${dataInfo[i].type}">
            <div class='pokeProperty'> 
                <img class="imgPokemon" src="${dataInfo[i].img}"/>
                <h2>${dataInfo[i].name}</h2>
                <h3># ${dataInfo[i].num}</h3>
-               <h3>${dataInfo[i].type[0]}</h3>
+               <h3>${typeImgCard(dataInfo[i].type)}</h3>
            </div>
        </div>
        </div>`;
@@ -89,6 +96,15 @@ selectorPokeType.addEventListener("change", () => {
 
 const cardType = document.getElementById("lookPokeType");
 
+//Para mostrar imagen del tipo en la tarjeta
+const typeImg = (dataInfo) => {
+    let imgEachPokeType = '';
+    dataInfo.forEach((typesPokemon) => {
+        imgEachPokeType += `<img src="./images/Type/${typesPokemon}.png" class="pokeCardType" alt="weaknesses"/>`;
+    });
+    return imgEachPokeType;
+};
+
 function lookPokedexType(dataInfo) {
     let cardDesignType = "";
     for (let i = 0; i < dataInfo.length; i++) {
@@ -99,7 +115,7 @@ function lookPokedexType(dataInfo) {
                <img class="imgPokemon" src="${dataInfo[i].img}"/>
                <h2>${dataInfo[i].name}</h2>
                <h3># ${dataInfo[i].num}</h3>
-               <h3>${dataInfo[i].type[0]}</h3>
+               <h3>${typeImg(dataInfo[i].type)}</h3>
            </div>
        </div>
        </div>`;
@@ -207,14 +223,25 @@ const weaknesses = (dataInfo) => {
     });
     return imgEachPokemon;
 };
-//Imagenes de los caramelos
-/*const candy = (dataInfo) => {
+
+/*const imgEvolPoke = (dataInfo) => {
+    let imgEachEvolPoke = '';
+    dataInfo.forEach((evolutionPokemon) => {
+        imgEachEvolPoke += `<img src="./images/Type/${weaknessesPokemon}.png" class="weakType" alt="weaknesses"/>`;
+    });
+    return imgEachPokemon;
+};*/
+
+/*//Imagenes de los caramelos
+  const candy = (dataInfo) => {
     let imgEachCandyPokemon = '';
     dataInfo.forEach((candyPokemon) => {
-        imgEachCandyPokemon += `<img src="./images/candy/Candy/${candyPokemon}.png" alt="candy"/>`;
+        imgEachCandyPokemon += `<img src="./images/Candy/${candyPokemon}.png" alt="candy"/>`;
     });
-    return imgEachCandyPokemon;
-};*/
+    //return imgEachCandyPokemon;
+    let resultCandy = filterPokemonCandy(dataPokedex, imgEachCandyPokemon);
+    lookPokedex(resultCandy);
+  };*/
 
 function lookModal(dataInfo) {
     let modal = document.getElementById("myModal"); //Modal general html
@@ -235,26 +262,26 @@ function lookModal(dataInfo) {
                     <span class="close">&times;</span>
                 </div>
                 <div  class="modalCharacters">
-                <div class="cardElem2">
-                   <h3> # ${dataInfo[i].num}</h3>
-                   <img src="${dataInfo[i].img}"/> 
-                    <h2>${dataInfo[i].name}</h2>
-               </div>
-                    <div class="characterInformation">
-                    <p>Peso: ${dataInfo[i].weight}</p>
-                    <p>Altura: ${dataInfo[i].height}</p>
-                    <p>Huevo: ${dataInfo[i].egg}</p>
+                    <div class"cardAndInfo">
+                        <div class="cardElem2">
+                            <h3> # ${dataInfo[i].num}</h3>
+                            <img src="${dataInfo[i].img}"/> 
+                            <h2>${dataInfo[i].name}</h2>
+                        </div>
+                        <div class="characterInformation">
+                            <p>Peso: ${dataInfo[i].weight}</p>
+                            <p>Altura: ${dataInfo[i].height}</p>
+                            <p>Huevo: ${dataInfo[i].egg}</p>
+                        </div>
                     </div>
                     <div class="characterInformation2">
-                        <h2>Tipo: ${dataInfo[i].type[0]}</h2>
-                        
+                        <h3>Tipo: ${dataInfo[i].type[0]} ${typeImg(dataInfo[i].type)}</h3>
                         <p>Débil contra: ${weaknesses(dataInfo[i].weaknesses)}</p>
-                        
-                        <h2>Evolución / Caramelos:</h2>
-                        <p> Pre Evolución: ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].num : ''}  ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].name : 'No tiene'}</p> 
-                        <p>Caramelo: ${dataInfo[i].candy}</p>
-                        <p>Caramelo: ${dataInfo[i].candy_count}</p>
-                        <p> Evolución: ${dataInfo[i].next_evolution ? dataInfo[i].next_evolution[0].num : ''}  ${dataInfo[i].next_evolution ? dataInfo[i].next_evolution[0].name : 'No tiene'}</p> 
+                        <h3>Evolución / Caramelos:</h3>
+                        <p>Pre-Evolución: # ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].num : ''}  ${dataInfo[i].prev_evolution ? dataInfo[i].prev_evolution[0].name : 'No tiene'}</p> 
+                        <p>Tipo Caramelo: ${dataInfo[i].candy}</p>
+                        <p>Caramelo para Evolucionar: ${dataInfo[i].candy_count}</p>
+                        <p>Evolución: # ${dataInfo[i].next_evolution ? dataInfo[i].next_evolution[0].num : ''}  ${dataInfo[i].next_evolution ? dataInfo[i].next_evolution[0].name : 'No tiene'}</p> 
                     </div>
                 </div>
             </div>`;
@@ -279,13 +306,31 @@ function lookModal(dataInfo) {
 //boton logo
 document.getElementById("LogoP").addEventListener("click", () => {
     document.getElementById("origin").style.display = "block";
-    document.getElementById("novato").style.display = "none";
+    document.getElementById("novatoInfo").style.display = "none";
+    document.getElementById("UnPokemonEs").style.display = "none";
+    document.getElementById("UnaPokedexEs").style.display = "none";
+    document.getElementById("UnTipoDePokemonEs").style.display = "none";
     document.getElementById("entrenador").style.display = "none";
     document.getElementById("pokedexKanto").style.display = "none";
     document.getElementById("pokedexKanto").style.display = "none";
     document.getElementById("typePokemon").style.display = "none";
     document.getElementById("rootType").style.display = "none";
 });
+
+document.getElementById("buttonNovato").addEventListener("click", buttonNovato);
+
+function buttonNovato() {
+    let originActual = document.getElementById("origin");
+    originActual.style.display = "none";
+    let lookNovato = document.getElementById("novatoInfo");
+    lookNovato.style.display = "block";
+    let lookUnPokemonEs = document.getElementById("UnPokemonEs");
+    lookUnPokemonEs.style.display = "block";
+    let lookUnaPokedexEs = document.getElementById("UnaPokedexEs");
+    lookUnaPokedexEs.style.display = "block";
+    let lookUnTipoDePokemonEs = document.getElementById("UnTipoDePokemonEs");
+    lookUnTipoDePokemonEs.style.display = "block";
+}
 
 //Boton del menu (Entrenador)
 document.getElementById("allPokemonMenu").addEventListener("click", allPokemonMenu);
@@ -323,6 +368,8 @@ function typePokeBtn() {
     entrenadorActual.style.display = "none";
     let lookTypePokemon = document.getElementById("typePokemon");
     lookTypePokemon.style.display = "block";
+    let lookrootType = document.getElementById("rootType");
+    lookrootType.style.display = "block";
 }
 //Muestra sección Pokédex Kanto
 document.getElementById("allPokeBtn").addEventListener("click", allPokeBtn);

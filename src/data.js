@@ -48,9 +48,9 @@ export const orderDataNumDes = (dataInfo) => {
     const newPokeArray = [];
     for (let i = 0; i < dataInfo.length; i++) {
         newPokeArray.push(dataInfo[i]);
-        newPokeArray.sort((a, b) => parseInt(b.num - a.num));
-        return newPokeArray;
     }
+    newPokeArray.sort((a, b) => parseInt(b.num - a.num));
+    return newPokeArray;
 };
 
 
@@ -80,3 +80,11 @@ export const filterPokemonType = (dataInfo, pokeTipo) => {
     }
     return newDataArray.filter(pokemon => pokemon.type.includes(pokeTipo));
 };
+
+/*export const filterPokemonCandy = (dataInfo, candy) => {
+    const newDataArray = [];
+    for (let i = 0; i < dataInfo.length; i += 1) {
+        newDataArray.push(dataInfo[i]);
+    }
+    return newDataArray.filter(pokemon => pokemon.candy.includes(candy));
+};*/

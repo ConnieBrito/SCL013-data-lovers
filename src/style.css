@@ -75,6 +75,11 @@ li.dropdown {
     display: none;
 }
 
+.pokeballResponsive {
+    width: 30px;
+    height: 30px;
+}
+
 header {
     position: fixed;
     top: 0px;
@@ -174,7 +179,7 @@ button.boton {
 .buttonChoice {
     width: 100%;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #buttonInfo {
@@ -400,6 +405,13 @@ figure:hover figcaption {
     margin: auto;
 }
 
+.pokeCardType {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .lookPoke {
     display: flex;
     flex-wrap: wrap;
@@ -572,7 +584,7 @@ label {
     /*Se queda en el lugar fijo*/
     z-index: 1;
     /*Trae el modal al frente*/
-    padding-top: 160px;
+    padding-top: 30px;
     left: 0;
     top: 0;
     width: 100%;
@@ -582,13 +594,14 @@ label {
 }
 
 .modalContent {
-    background: rgba(251, 210, 99, 0.945);
+    background: rgba(248, 218, 136, 0.94);
     margin: auto;
     padding: 10px;
     border-radius: 10px;
     border: 3px solid #FCB12B;
     width: 50%;
-    height: 480px;
+    height: 430px;
+    margin-top: 150px;
 }
 
 .frame {
@@ -617,9 +630,14 @@ label {
 
 .characterInformation {
     padding: 0px 0px 0px 30px;
-    text-align: center;
+    text-align: left;
     font-family: 'Roboto', sans-serif;
     color: #000;
+}
+
+.cardAndInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .characterInformation2 {
@@ -634,17 +652,6 @@ label {
     width: 35px;
     height: 35px;
     margin-left: 5px;
-}
-
-
-/*Vista de pag*/
-
-#origin {
-    display: auto;
-}
-
-#modalContent {
-    display: none;
 }
 
 .note {
@@ -667,7 +674,38 @@ label {
     background-color: antiquewhite;
     text-align: center;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 5px;
+}
+
+
+/*Vista de pag*/
+
+#origin {
+    display: auto;
+}
+
+#modalContent {
+    display: none;
+}
+
+.pokePag {
+    display: none;
+}
+
+#novatoInfo {
+    display: none;
+}
+
+#UnPokemonEs {
+    display: none;
+}
+
+#UnaPokedexEs {
+    display: none;
+}
+
+#UnTipoDePokemonEs {
+    display: none;
 }
 
 
@@ -689,5 +727,50 @@ label {
     }
     #btnMenuResponsive:checked~ul {
         margin: 0;
+    }
+}
+
+
+/*Responsive SmartPhone*/
+
+@media (max-width: 375px) {
+    header label {
+        display: block;
+    }
+    ul {
+        position: absolute;
+        background: #facd52;
+        width: 40%;
+        margin-left: -40%;
+        transition: all 0.5s;
+    }
+    li {
+        flex-direction: column;
+    }
+    #btnMenuResponsive:checked~ul {
+        margin: 0;
+    }
+    #gifPoke {
+        min-width: 20px;
+        min-height: 20px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    button.boton {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 15px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    img.marco {
+        display: none;
+    }
+    img.marcob {
+        display: none;
     }
 }
