@@ -37,7 +37,7 @@ En esta ocasión decidimos trabajar con:
 
   AL realizar los test de nuestras funciones obtuvimos desde un 75% de aprobación
 
-  <img src="https://github.com/ConnieBrito/SCL013-data-lovers/blob/master/src/images/testUnitarioP2v2.jpg" width= 500px height= 300px>
+  <img src="https://github.com/ConnieBrito/SCL013-data-lovers/blob/master/src/images/testUnitarioP2v2.JPG" width= 500px height= 300px>
 
 ## 2. Criterios del proyecto
 
