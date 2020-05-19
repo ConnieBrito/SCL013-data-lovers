@@ -728,6 +728,161 @@ label {
     #btnMenuResponsive:checked~ul {
         margin: 0;
     }
+    #gifPoke {
+        min-width: 20px;
+        min-height: 20px;
+    }
+    h1 {
+        font-size: 21px;
+    }
+    h2 {
+        font-size: 17px;
+    }
+    button.boton {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 15px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    img.marco {
+        display: none;
+    }
+    img.marcob {
+        display: none;
+    }
+    #buttonInfo {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 16px;
+        margin-top: 25px;
+        flex-direction: column;
+    }
+    #buttonInfo2 {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 16px;
+        margin-top: 25px;
+        flex-direction: column;
+    }
+    #buttonInfo3 {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 16px;
+        margin-top: 25px;
+        flex-direction: column;
+    }
+    .container {
+        width: 40%;
+    }
+    .respuestas {
+        width: 99%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    img.novato {
+        width: 370px;
+        height: 80%;
+        margin-top: 20px;
+    }
+    p.definition {
+        font-size: 15px;
+        width: 90%;
+    }
+    .pikaimg {
+        width: 80px;
+        height: 100px;
+    }
+    .pokeimg {
+        width: 80px;
+        height: 120px;
+    }
+    .typeimg {
+        width: 60px;
+        height: 60px;
+        flex-direction: row;
+    }
+    .tiposimg2 {
+        flex-direction: row;
+    }
+    .pokedeximg {
+        width: 90px;
+        height: 130px;
+        margin-top: 30px;
+    }
+    .pokeballimg {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 40px;
+    }
+    .filter-container {
+        flex-direction: column;
+        height: 150px;
+    }
+    label {
+        font-size: 14px;
+    }
+    .navigationMenu {
+        flex-direction: column;
+        font-size: 13px;
+    }
+    .lookCard {
+        width: 90%;
+        height: 30%;
+        margin: auto;
+    }
+    .pokeCardType {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .elemCard {
+        width: 100px;
+        height: 230px;
+        text-align: center;
+        margin: 5px;
+    }
+    .typeButtons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tipychoose {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .modal {
+        width: 400px;
+        height: 700px;
+        padding-top: 10px;
+    }
+    .modalContent {
+        width: 80%;
+        height: 60%;
+    }
+    .frame {
+        padding: 3px;
+        width: 100%;
+        height: 80%;
+    }
+    .cardElem2 {
+        width: 120px;
+        margin-left: 5px;
+    }
+    .characterInformation {
+        font-size: 10px;
+        margin-left: 7px;
+    }
+    .characterInformation2 {
+        font-size: 12px;
+        margin-top: 45px;
+    }
+    .weakType {
+        width: 20px;
+        height: 20px;
+        margin-left: 3px;
+    }
 }
 
 
@@ -772,5 +927,137 @@ label {
     }
     img.marcob {
         display: none;
+    }
+    #buttonInfo {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 15px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    #buttonInfo2 {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 15px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    #buttonInfo3 {
+        min-width: 30px;
+        min-height: 15px;
+        font-size: 15px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+    .container {
+        width: auto;
+    }
+    .respuestas {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    img.novato {
+        width: 370px;
+        height: 80%;
+        margin-top: 20px;
+    }
+    p.definition {
+        font-size: 15px;
+        width: 90%;
+    }
+    .pikaimg {
+        width: 80px;
+        height: 100px;
+    }
+    .pokeimg {
+        width: 80px;
+        height: 120px;
+    }
+    .typeimg {
+        width: 60px;
+        height: 60px;
+        flex-direction: row;
+    }
+    .tiposimg2 {
+        flex-direction: row;
+    }
+    .pokedeximg {
+        width: 90px;
+        height: 130px;
+        margin-top: 30px;
+    }
+    .pokeballimg {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 40px;
+    }
+    .filter-container {
+        flex-direction: column;
+        height: 150px;
+    }
+    label {
+        font-size: 14px;
+    }
+    .navigationMenu {
+        flex-direction: column;
+        font-size: 13px;
+    }
+    .lookCard {
+        width: 50%;
+        height: 30%;
+        margin: auto;
+    }
+    .pokeCardType {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .elemCard {
+        width: 100px;
+        height: 230px;
+        text-align: center;
+        margin: 5px;
+    }
+    .typeButtons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tipychoose {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .modal {
+        width: 400px;
+        height: 700px;
+        padding-top: 10px;
+    }
+    .modalContent {
+        width: 80%;
+        height: 60%;
+    }
+    .frame {
+        padding: 3px;
+        width: 100%;
+        height: 80%;
+    }
+    .cardElem2 {
+        width: 120px;
+        margin-left: 5px;
+    }
+    .characterInformation {
+        font-size: 10px;
+        margin-left: 7px;
+    }
+    .characterInformation2 {
+        font-size: 12px;
+        margin-top: 45px;
+    }
+    .weakType {
+        width: 20px;
+        height: 20px;
+        margin-left: 3px;
     }
 }
